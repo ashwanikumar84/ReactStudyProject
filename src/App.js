@@ -1,14 +1,11 @@
 import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom'
 import Route from 'react-router-dom/Route'
-import './App.css';
-import Header from './Header';
-import Main from './Module/MainContent/component/Main';
-import LeftSideBar from './Module/LeftContainer/component/leftSideBar';
-import RightSideBar from './Module/RightContainer/component/RightSideBar';
 import BaseComponent from './Base/BaseComponent';
-import StateHook from './Entity/StateHook';
-import RootContainer from './Base/Container' 
+import RootContainer from './Base/Container'
+import Repositories from './Module/FetchSample/Component/Repositories';
+import './App.css';
+
 
 class App extends BaseComponent {
 
@@ -38,7 +35,7 @@ class App extends BaseComponent {
           {/* <Route path="/admin" component={RootContainer}/> */}
           <Route path="/about/" exact render={
               () => {
-                return ( <h1>Welcome About Page</h1>)
+                return ( <Repositories/>)
               }
             }/>
 

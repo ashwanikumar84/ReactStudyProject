@@ -8,14 +8,7 @@ const AppRightSideBar = (props) => {
 
     const userName = useRef()
     // UniqueId.enableUniqueIds(this)
-    
-    const [personsState, setPersonsState] = useState({
-      persons:[
-        {id:"id1",name:"Ashwani", age:"35"},
-        {id:"id2",name:"Vishal", age:"36"},
-        {id:"id3",name:"Ashish", age:"33"}, 
-      ]
-   })
+
 
     const [state, setState] = useState({
        mystate:["Current State 1","Current State 2","Current State 3" ]
@@ -26,6 +19,14 @@ const AppRightSideBar = (props) => {
         mystate:["Updated State 1","Updated State 2","Updated State 3" ]
      })
     }
+
+    const [personsState, setPersonsState] = useState({
+      persons:[
+        {id:"id1",name:"Ashwani", age:"35"},
+        {id:"id2",name:"Vishal", age:"36"},
+        {id:"id3",name:"Ashish", age:"33"}, 
+      ]
+   })
 
     const deletePerson = (index) => {
       const persons = Object.assign([],personsState.persons)
@@ -69,8 +70,8 @@ const AppRightSideBar = (props) => {
         <br/>
         Custom Wedgit : <CustomButton disable clickEvent={updateMenus.bind(this)}>Update Menu</CustomButton>
 
-        {props.menuList.map((menu) =>
-           <h2><li>{menu.name}</li></h2>
+        {props.menuList.map((menu, i) => 
+           <h2><li key={i+""}>{menu.name} --- {i}</li></h2>
         )}
 
         <h3>{state.mystate[0]}</h3>

@@ -8,9 +8,12 @@ import BaseComponent from './Base/BaseComponent';
 
 // };
 
+
+
 class AppHeader extends BaseComponent {
 
   name = "Ashwani"
+  // currentDate = new Date.toString
   myFunction1 = (params) => {
     alert('params value =  '+ params)
   }
@@ -23,6 +26,7 @@ class AppHeader extends BaseComponent {
       }}>
         <h1>{this.props.title}</h1>
           <p>{this.props.children}</p>
+          {/* currentDate */}
       </div>
     );
   }

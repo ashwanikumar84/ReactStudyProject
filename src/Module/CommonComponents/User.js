@@ -1,5 +1,5 @@
 import React from 'react';
-import PropType from 'prop-type'
+// import PropType from 'prop-type'
 import {useSelector} from 'react-redux'; // useSelector is used to subscribe an action
 
 const User = (props) => {

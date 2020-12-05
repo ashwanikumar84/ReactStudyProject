@@ -11,6 +11,6 @@ const store = createStore(allReducers)
 
 ReactDOM.render(
   // Putting store into provider to make it(store) global
-  <Provider store={store}><App/></Provider>,
+  <Provider store={store}><App/></Provider>, 
   document.getElementById('root')
 );

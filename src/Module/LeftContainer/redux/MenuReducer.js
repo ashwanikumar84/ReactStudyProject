@@ -1,5 +1,5 @@
 const initialState = {
-    name: ""
+    name: "Default"
 }
 
  const MenuReducer = (state = initialState, action) => {

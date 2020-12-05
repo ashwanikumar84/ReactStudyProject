@@ -10,7 +10,7 @@ const Person = (props) => {
 
     return(
         <div style={{width: 'auto', marginTop:'10px'}}>
-            <li>
+            <li key={props.name}>
                 <span>{props.name} </span>
                 <button onClick={props.eventDelete} style={{float: 'right'}}>x</button> 
                 <input onChange={props.eventChange} style={{float: 'right', width:'100px'}}></input>

@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
-import connect from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import React from'react'
+// import connect from 'react-redux'
+// import { withRouter } from 'react-router-dom'
 
 
 const ReduxSample = (props) =>{
@@ -33,18 +33,18 @@ const ReduxSample = (props) =>{
 
 //Subscripe or map state to props
 
-const mapStateToProps = (state) => {
-    return{
-        age:state.age
-    }
-}
+// const mapStateToProps = (state) => {
+//     return{
+//         age:state.age
+//     }
+// }
 
-const mapDispatchToProps = (dispatch) => {
-    return{
-        increment:() => dispatch({type:'ADD'}),
-        decrement:() => dispatch({type:'SUB'})
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return{
+//         increment:() => dispatch({type:'ADD'}),
+//         decrement:() => dispatch({type:'SUB'})
+//     }
+// }
 // connect return an Higer Order Component
 // export default withRouter(connect(mapStateToProps,mapDispatchToProps)) (ReduxSample)
 export default ReduxSample

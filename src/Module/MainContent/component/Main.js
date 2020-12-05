@@ -4,8 +4,10 @@ import Person from '../../../Entity/Person'
 import StateHook from '../../../Entity/StateHook'
 // import personObject from '../../../Entity/Person'
 import User from '../../CommonComponents/User'
-import ReduxStyle2Component from './ReduxStyle2Component'
+import ReduxStyle2Component from '../../CommonComponents/ReduxStyle2Component'
 import BindingExample from '../../CommonComponents/BindingExample'
+import ComponentLifeCycle from '../../../ComponentSamples/LifeCycle/ComponentLifeCycle'
+
 {/*}
 state = {
   counter: 0
@@ -25,7 +27,7 @@ const AppMainContent = (props) => {
   // render() {
     // {console.log(this.personObject.getAddress)}
     return (
-      <div style={{width: '70vw', height : `100vh`, border: '1px solid blue'}} > {/* onClick={()=>{alert('result = '+ this.myFunction(3))}} */}
+      <div style={{width: '70vw', height : `auto`, border: '1px solid blue'}} > {/* onClick={()=>{alert('result = '+ this.myFunction(3))}} */}
       
         Main Content
         <br/>
@@ -49,7 +51,9 @@ const AppMainContent = (props) => {
           <div style={{display: 'flex', padding:"10px", width: `20vw`, height : `40vh`, border: '1px solid blue'}}>
             <ReduxStyle2Component/>
           </div>
-          
+          <div style={{display: 'flex', padding:"10px", width: `20vw`, height : `40vh`, border: '1px solid blue'}}>
+            <ComponentLifeCycle/>
+          </div>
         </div>
 
         {/* State counter from Redux : {this.props.ctr}<br/>

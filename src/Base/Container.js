@@ -8,7 +8,7 @@ import StateHook from '../Entity/StateHook';
 
 const Container = () => {
 
-    const [menuState, setMenuState] = useState({
+    const [menuState] = useState({
         menus:[
             {name: "Menu 1"},
             {name: "Menu 2"},
@@ -23,7 +23,12 @@ const Container = () => {
             <div style={{display:'flex', direction:'col', justifyContent : 'space-between'}}>
            
             <LeftSideBar menu1={menuState.menus[0].name} menu2={menuState.menus[1].name} menu3={menuState.menus[2].name}> Left Side Bar </LeftSideBar>
-            <Main></Main> 
+            <div style={{display:'none', direction:'col', justifyContent : 'space-between'}}>
+                <Main/>
+            </div>
+            <div style={{display:'flex', direction:'col', justifyContent : 'space-between'}}>
+                <StateHook />
+            </div>  
             <RightSideBar menuList={menuState.menus}/> 
             </div>
         

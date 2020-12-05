@@ -14,7 +14,7 @@ class Person {
     getAllUser(){
         let updatedNames = [...this.names,'Vishal','Kannu'] 
         let finalArray = updatedNames.map((name) => {
-            return  'Mr.'+ name 
+            return  'Mr.sdfs'+ name 
         });
         return finalArray
     }
