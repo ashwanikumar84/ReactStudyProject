@@ -27,20 +27,20 @@ const AppMainContent = (props) => {
   // render() {
     // {console.log(this.personObject.getAddress)}
     return (
-      <div style={{width: '70vw', height : `auto`, border: '1px solid blue'}} > {/* onClick={()=>{alert('result = '+ this.myFunction(3))}} */}
+      <div style={{width: '100%', height : `auto`, padding: '10px', border: '1px solid blue'}} > {/* onClick={()=>{alert('result = '+ this.myFunction(3))}} */}
       
         Main Content
         <br/>
         {/* {personObject.getAllUser()} */}
         <br/>
         <div style={{display: 'flex'}}>
-            <div style={{display: 'flex', padding:"10px", width: `20vw`, height : `40vh`, border: '1px solid blue'}}>
+            <div style={{display: 'flex', padding:"10px", width: `30%`, height : `auto`, border: '1px solid blue'}}>
               <StateHook/>
               </div>
-            <div style={{display:'flex', padding:"10px", direction:'row', width: `40vw`, height : `40vh`, border: '1px solid blue'}}>
+            <div style={{display:'flex', padding:"10px", direction:'row', width: `40%`, height : `auto`, border: '1px solid blue'}}>
               <BindingExample/>
             </div>
-            <div style={{textAlign: "left", padding:"10px", direction:'row', width: `20vw`, height : `40vh`, border: '1px solid blue'}}>
+            <div style={{textAlign: "left", padding:"10px", direction:'row', width: `30%`, height : `auto`, border: '1px solid blue'}}>
               <User profile={0}>Ashwani</User>
               <User profile={"Android"}>Vishal</User>
               <User profile={"BE"}></User>
@@ -48,10 +48,10 @@ const AppMainContent = (props) => {
         </div>
 
         <div style={{display: 'flex'}}>
-          <div style={{display: 'flex', padding:"10px", width: `20vw`, height : `40vh`, border: '1px solid blue'}}>
+          <div style={{display: 'flex', padding:"10px", width: `30%`, height : `30vh`, border: '1px solid blue'}}>
             <ReduxStyle2Component/>
           </div>
-          <div style={{display: 'flex', padding:"10px", width: `20vw`, height : `40vh`, border: '1px solid blue'}}>
+          <div style={{display: 'flex', padding:"10px", width: `30%`, height : `30vh`, border: '1px solid blue'}}>
             <ComponentLifeCycle/>
           </div>
         </div>

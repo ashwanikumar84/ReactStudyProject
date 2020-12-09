@@ -53,7 +53,7 @@ import {addMenu,removeMenu} from '../redux/MenuAction'
     
 
     return (
-      <div  style={{width: `30vw`, height : `auto`, border: '1px solid red'}}>
+      <div  style={{width: '100%', height : "auto",padding: '10px', border: '1px solid red'}}>
        {props.children}
      
         <br/><br/>
@@ -124,9 +124,9 @@ import {addMenu,removeMenu} from '../redux/MenuAction'
            Using Redux Style 1: <br/><br/> {menuName.name}
         </ul><br/><br/>
 
-<ul style={{display: 'flex'}}>
-   Using Redux Style 1: <br/><br/> {menuName.name}
-</ul>
+      <ul style={{display: 'flex'}}>
+         Using Redux Style 1: <br/><br/> {menuName.name}
+      </ul>
 
       </div>
     );

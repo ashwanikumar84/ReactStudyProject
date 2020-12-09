@@ -65,7 +65,7 @@ const AppRightSideBar = (props) => {
     }
     return (
       
-      <div style={{textAlign: "left", padding:"10px", width: `30vw`, height : `auto`, border: '1px solid blue'}}>
+      <div style={{textAlign: "left", width: `100%`, height : `auto`, padding: '10px', border: '1px solid blue'}}>
         Right Side Bar<br/>
         <br/>
         Custom Wedgit : <CustomButton disable clickEvent={updateMenus.bind(this)}>Update Menu</CustomButton>

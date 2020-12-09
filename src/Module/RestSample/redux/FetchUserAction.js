@@ -1,4 +1,3 @@
-
 export const getUsers = (props) =>{
     const apiUrl = 'http://jsonplaceholder.typicode.com/users'
     // console.log(props)

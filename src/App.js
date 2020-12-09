@@ -3,9 +3,13 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import Route from 'react-router-dom/Route'
 import BaseComponent from './Base/BaseComponent';
 import RootContainer from './Base/Container'
-import Repositories from './Module/FetchSample/Component/Repositories';
-import './App.css';
 
+import AxiosApiTestComponent from './Module/RestSample/Component/AxiosApiSample';
+import FetchApiTestComponent from './Module/RestSample/Component/FetchAPISample';
+import PromiseSampleComponent from './Module/RestSample/Component/PromiseSample';
+
+import './App.css';
+import axios from 'axios'
 
 class App extends BaseComponent {
 
@@ -33,12 +37,22 @@ class App extends BaseComponent {
             }/>
 
           {/* <Route path="/admin" component={RootContainer}/> */}
-          <Route path="/about/" exact render={
+          
+          <Route path="/axios/" exact render={
               () => {
-                return ( <Repositories/>)
+                return ( <AxiosApiTestComponent/>)
               }
             }/>
-
+          <Route path="/fetch/" exact render={
+              () => {
+                return ( <FetchApiTestComponent/>)
+              }
+            }/>
+          <Route path="/promise/" exact render={
+              () => {
+                return ( <PromiseSampleComponent/>)
+              }
+            }/>
           <Route path="/setting/" exact strict render={
             () => {
               return ( 
