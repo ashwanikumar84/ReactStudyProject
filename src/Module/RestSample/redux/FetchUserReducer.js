@@ -12,6 +12,6 @@ export const FetchUserReducer = (state = initialState, action) => {
     console.log("message = "+ action)
     newState.users = action
     newState.message = "Loading Completed"
-    newState.message = false
+    newState.isLoading = false
     return newState
 };

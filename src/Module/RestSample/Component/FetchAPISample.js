@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import { getUsers } from '../redux/FetchUserAction'
 import List from '../../CommonComponents/List'
-import { getRepositories } from '../../Network/FetchAPI'
+import { getRepositories } from '../../Network/Repository'
 
 
 const FetchApiTestComponent = () =>{

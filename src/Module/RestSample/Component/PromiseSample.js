@@ -2,13 +2,13 @@ import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import { getUsers } from '../redux/FetchUserAction'
 import List from '../../CommonComponents/List'
-import { getRepositories } from '../../Network/FetchAPI'
+import { getRepositories } from '../../Network/Repository'
 import axios from 'axios';
 
 const PromiseSample = () =>{
 
     const[repoState, setRepoState] = useState({
-        message: "Start Loading",
+        message: "",
         isLoading : false,
         users: []
     }) 
@@ -58,7 +58,7 @@ const PromiseSample = () =>{
                 : 
                     <div>
                         <List response={repoState.users}/>
-                        <h1>{repoState.message}</h1>
+                        <h2>{repoState.message}</h2>
                     </div> 
                 }
 

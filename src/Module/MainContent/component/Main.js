@@ -2,7 +2,7 @@ import React from 'react';
 // import AppHeader from './Header';
 import Person from '../../../Entity/Person'
 import StateHook from '../../../Entity/StateHook'
-// import personObject from '../../../Entity/Person'
+import personObject from '../../../Entity/Person'
 import User from '../../CommonComponents/User'
 import ReduxStyle2Component from '../../CommonComponents/ReduxStyle2Component'
 import BindingExample from '../../CommonComponents/BindingExample'
@@ -20,18 +20,20 @@ personObject = new Person()
 const AppMainContent = (props) => {
 
   // headerObject = new AppHeader()
- 
+
 
   // myFunction = params1 => 'Hello 11 '+ params1
  
   // render() {
     // {console.log(this.personObject.getAddress)}
+
+    const personObj = new personObject()
     return (
       <div style={{width: '100%', height : `auto`, padding: '10px', border: '1px solid blue'}} > {/* onClick={()=>{alert('result = '+ this.myFunction(3))}} */}
       
         Main Content
         <br/>
-        {/* {personObject.getAllUser()} */}
+        {/* {console.log('aaa', personObj.getAllUser())} */}
         <br/>
         <div style={{display: 'flex'}}>
             <div style={{display: 'flex', padding:"10px", width: `30%`, height : `auto`, border: '1px solid blue'}}>

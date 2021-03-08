@@ -7,6 +7,7 @@ import RootContainer from './Base/Container'
 import AxiosApiTestComponent from './Module/RestSample/Component/AxiosApiSample';
 import FetchApiTestComponent from './Module/RestSample/Component/FetchAPISample';
 import PromiseSampleComponent from './Module/RestSample/Component/PromiseSample';
+import AllUserComponent from './Module/RestSample/Component/AllUserComponent';
 
 import './App.css';
 import axios from 'axios'
@@ -51,6 +52,12 @@ class App extends BaseComponent {
           <Route path="/promise/" exact render={
               () => {
                 return ( <PromiseSampleComponent/>)
+              }
+            }/>
+            
+          <Route path="/users/" exact render={
+              () => {
+                return ( <AllUserComponent/>)
               }
             }/>
           <Route path="/setting/" exact strict render={

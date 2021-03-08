@@ -3,7 +3,7 @@ import BaseComponent from '../../../Base/BaseComponent';
 import Person from '../../../Entity/Person'
 import {useSelector, useDispatch} from 'react-redux';
 import {addMenu,removeMenu} from '../redux/MenuAction'
-
+import { NavLink } from "react-router-dom";
   
    
 // class AppLeftSideBar extends BaseComponent {
@@ -42,14 +42,22 @@ import {addMenu,removeMenu} from '../redux/MenuAction'
       })   
     }
 
+    const handleClick = () =>{
+      dispatch(addMenu(userNameFromUseRef.current.value))
+      
+    }
     
-    // if (!userNameFromUseRef.current) {
-    //   userNameFromCreateRef.current = defaultUserName;
-    // }
+    const redirect = () =>{
+     alert('Hello')      
+    }
 
-    // if (!userNameFromCreateRef.current) {
-    //   userNameFromCreateRef.current = defaultUserName;
-    // }
+    if (!userNameFromUseRef.current) {
+      userNameFromCreateRef.current = defaultUserName;
+    }
+
+    if (!userNameFromCreateRef.current) {
+      userNameFromCreateRef.current = defaultUserName;
+    }
     
 
     return (
@@ -81,9 +89,14 @@ import {addMenu,removeMenu} from '../redux/MenuAction'
 
         <input type='text' placeholder='menu name' ref={userNameFromUseRef}></input>
         <br/><br/>
-        <button onClick={() => dispatch(addMenu(userNameFromUseRef.current.value))}>Add Menu</button>
+        <button onClick={() => handleClick()}>Add Menu</button>
   
         <br/><br/>
+
+        <NavLink
+          to={"#axios"} onClick={() => redirect()}>
+            redirect
+        </NavLink>
 
         <ul style={{display: 'flex'}}>
            Using Redux Style 1: <br/><br/> {menuName.name}

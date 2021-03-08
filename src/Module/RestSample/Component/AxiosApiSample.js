@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux';
 import { getUsers } from '../redux/FetchUserAction'
 import List from '../../CommonComponents/List'
-import { getRepositories } from '../../Network/FetchAPI'
+import { getRepositories } from '../../Network/Repository'
 import axios from 'axios';
 
 
@@ -11,13 +11,13 @@ const AxiosApiTestComponent = () =>{
     const dispatch = useDispatch()
     // const repoState = useSelector(state => state.fetchUserReducer)
     const[repoState1, setRepoState1] = useState({
-        message: "Start Loading",
-        isLoading : true,
+        message: "",
+        isLoading : false,
         users: []
     }) 
 
     const[repoState2, setRepoState2] = useState({
-        message: "Start Loading",
+        message: "",
         isLoading : false,
         users: []
     })
@@ -30,48 +30,52 @@ const AxiosApiTestComponent = () =>{
     //     // })
     // },[setRepoState]);
     
-    const apiUrl1 = 'http://jsonplaceholder.typicode.com/users'
+    // const apiUrl1 = 'http://jsonplaceholder.typicode.com/user'
     const apiUrl2 = 'https://api.github.com/users/hacktivist123/repos'
+    const apiUrl1 = 'https://restcountries.eu/rest/v2/all'
+    
 
     const getMyRepositories =() =>{
         setRepoState1({
-            message: "Start Loading",
-            isLoading : false,
-            message : "Loading..."
+            message: "Loading...",
+            isLoading : true,
   
         })
         
-        dispatch(getUsers())
-        axios.all([axios.get(apiUrl1),
-            axios.get(apiUrl2)]).then(response => {
-                    console.log('Date created:1 ', response[0].data);
+        // dispatch(getUsers())
 
-                    setRepoState1({
-                        isLoading : false,
-                        message : "Completed",
-                        users: response[0].data
-                    })
-                    console.log('This is your data', repoState1.users)    
+        // axios.all([axios.get(apiUrl1),
+        //     axios.get(apiUrl2)]).then(response => {
+        //             console.log('Date created:1 ', response[0].data);
 
-                    console.log('Date created:2 ', response[1]);
-                    setRepoState2({
-                        isLoading : false,
-                        message : "Completed",
-                        users: response[1].data
-                    })
-                    console.log('This is your data', repoState2.users)
-                })
-
-        // axios.get(apiUrl1).then((response) => {
-        //     const payload = response.data
-            
-        //     setRepoState1({
+        //             setRepoState1({
         //                 isLoading : false,
         //                 message : "Completed",
-        //                 users: payload
+        //                 users: response[0].data
         //             })
-        //             console.log('This is your data', repoState1.users)
-        // })
+        //             console.log('This is your data', repoState1.users)    
+
+        //             console.log('Date created:2 ', response[1]);
+        //             setRepoState2({
+        //                 isLoading : false,
+        //                 message : "Completed",
+        //                 users: response[1].data
+        //             })
+        //             console.log('This is your data', repoState2.users)
+        //         }).catch((err) => {
+        //             throw err
+        //         })
+
+        axios.get(apiUrl1).then((response) => {
+            const payload = response.data
+            
+            setRepoState1({
+                        isLoading : false,
+                        message : "Completed",
+                        users: payload
+                    })
+                    console.log('This is your data', repoState1.users)
+        })
     }
 // Using Redux Hooks
     // const getMyRepositories = () => {
@@ -89,13 +93,13 @@ const AxiosApiTestComponent = () =>{
                     <h1>{repoState1.message}</h1> 
                 : 
                     <div>
-                        <List response={repoState1.users}/>
+                        <List response={'repoState1.users'}/>
                         {/* <List response={repoState2.users}/> */}
-                        
+                        <h2>{repoState1.message}</h2>
                     </div> 
                 }
 
-                <button onClick={getMyRepositories.bind(this)}>Get Repositories</button>
+                <button onClick={getMyRepositories.bind(this)}>Get All Users</button>
             </div>
         </div>
     )
